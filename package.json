@@ -1,8 +1,8 @@
 {
-  "name": "edc-device-catalog-search",
+  "name": "edc-device-library-search",
   "version": "9.0.0",
   "private": true,
-  "homepage": "https://github.ibm.com/omnio/edgeconfig-device-search.git",
+  "homepage": "https://github.com/ibm-watson-iot/maximo-asset-monitor-device-library-search.git",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

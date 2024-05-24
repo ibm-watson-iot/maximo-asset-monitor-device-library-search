@@ -2,23 +2,15 @@ import { StatefulTable, Tag, Link, Dropdown } from "carbon-addons-iot-react";
 
 import Papa from "papaparse";
 import { useMemo, useEffect, useState } from "react";
-import csvFile9_0_X from "./devices/9.0.x.csv";
-import csvFile8_11_X from "./devices/8.11.x.csv";
 
 import "carbon-addons-iot-react/css/carbon-addons-iot-react.css";
-import { MANUFACTURER, VERSIONS } from "./constants/globalContants";
+import {
+  MANUFACTURER,
+  PROTOCOLS_TAG_COLOR,
+  SLACK_CONTACT_LINK,
+  VERSIONS,
+} from "./constants/globalContants";
 import ManufacturerCell from "./components/ManufacturerCell";
-
-const SLACK_CONTACT_LINK = "https://ibm-ai-apps.slack.com/archives/CA60S5T88";
-
-const PROTOCOLS_TAG_COLOR = {
-  modbus: "green",
-  "ethernet-ip": "teal",
-  "S7 PLC": "blue",
-  bacnet: "magenta",
-  MTConnect: "purple",
-  "json-over-http": "cool-grey",
-};
 
 const renderProtocolTags = ({ value }) => {
   if (value) {
@@ -91,19 +83,14 @@ const columns = [
   },
 ];
 
-const versionFileMap = {
-  "9.0.x": csvFile9_0_X,
-  "8.11.x": csvFile8_11_X,
-};
-
 export default function Search() {
   const [devices, setDevicesData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [version, setVersion] = useState(VERSIONS["9.0.x"]);
+  const [version, setVersion] = useState(Object.keys(VERSIONS)[0]);
 
   useEffect(() => {
     async function fetchData() {
-      await Papa.parse(versionFileMap[version], {
+      await Papa.parse(VERSIONS[version], {
         download: true,
         header: true,
         skipEmptyLines: true,
@@ -147,7 +134,7 @@ export default function Search() {
     <StatefulTable
       id="search-table"
       data-test="search-table"
-      secondaryTitle="Device library search"
+      secondaryTitle="Maximo Asset Monitor : Device library search"
       columns={columns}
       data={tabledata}
       actions={{
@@ -213,7 +200,7 @@ export default function Search() {
               onChange={({ selectedItem }) => {
                 setVersion(selectedItem);
               }}
-              items={Object.values(VERSIONS)}
+              items={Object.keys(VERSIONS)}
               initialSelectedItem={version}
             />
           ),

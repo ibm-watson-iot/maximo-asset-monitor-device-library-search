@@ -1,10 +1,12 @@
-# EDC - device catalog search
+# Maximo Asset Monitor - Device library search
 
-### Note
+## Note
 
-- Add a new file in the [`/src/devices/`](/src/devices/) folder with the version number. You can generate the export file using [_export_devices_csv.py_](https://github.ibm.com/omnio/omnio_server/blob/master/omnio_db/management/commands/export_devices_csv.py) management command.
+- Add or update a file in the [`/src/devices/`](src/devices/) folder with the specific version number. You can generate the export file using [_export_devices_csv.py_](https://github.ibm.com/omnio/omnio_server/blob/master/omnio_db/management/commands/export_devices_csv.py) management command.
+- Add a link to the newly added file in [`src/constants/globalContants.js`](src/constants/globalContants.js#L5)
+- Push the code changes to github. This repositary auto deploys the storybook changes into [`https://ibm-watson-iot.github.io/maximo-asset-monitor-device-library-search`](https://ibm-watson-iot.github.io/maximo-asset-monitor-device-library-search/)
 
-### Prerequisites
+## Prerequisites
 
 - [Node.js](https://nodejs.org/en/download/) - the required version is specified in the [`.nvmrc`](/.nvmrc)
   - If you're on macOS or using WSL on Windows, we recommend using [`nvm`](https://github.com/nvm-sh/nvm) as your version manager for Node.
@@ -13,14 +15,14 @@
 
 You'll also need a code editor to make changes. There are many to choose from but we suggest to use [VSCode](https://code.visualstudio.com/).
 
-### Install dependencies
+## Install dependencies
 
 ```bash
 # install the dependencies
 yarn install
 ```
 
-### Build and start the development server
+## Build and start the development server
 
 ```bash
 # run the server
@@ -29,7 +31,7 @@ yarn start
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### Adding a dependency
+## Adding a dependency
 
 ```bash
 # To add dependencies to the project

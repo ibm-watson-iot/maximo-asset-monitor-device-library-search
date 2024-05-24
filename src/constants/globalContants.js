@@ -1,9 +1,25 @@
-export const VERSIONS: Record<VersionType, VersionType> = {
-  "9.0.x": "9.0.x",
-  "8.11.x": "8.11.x",
+import csvFile9_0_X from "../devices/9.0.x.csv";
+import csvFile8_11_X from "../devices/8.11.x.csv";
+
+export const VERSIONS = {
+  // Add new file and versions here.
+  "9.0.x": csvFile9_0_X,
+  "8.11.x": csvFile8_11_X,
 };
 
-export const MANUFACTURER: Manufacturer[] = [
+export const SLACK_CONTACT_LINK =
+  "https://ibm-ai-apps.slack.com/archives/CA60S5T88";
+
+export const PROTOCOLS_TAG_COLOR = {
+  modbus: "green",
+  "ethernet-ip": "teal",
+  "S7 PLC": "blue",
+  bacnet: "magenta",
+  MTConnect: "purple",
+  "json-over-http": "cool-grey",
+};
+
+export const MANUFACTURER = [
   {
     name: "Endress Hauser",
     id: "8220c6b2-7eb6-47ac-b0ca-2f2347a0db1f",
