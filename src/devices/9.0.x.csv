@@ -1,4 +1,5 @@
 id,product_series,product_name,manufacturer,product_type,supported_protocols
+d11123,a bad change,test-E,CET,Power Meters,modbus
 d136b951-c852-4c44-8c0d-89e23693b9fd,PMC,53A-E,CET,Power Meters,modbus
 c4316f3b-23b2-4d2f-a83d-f3ceaafd55a7,Tmax XT2,Tmax XT2 & Ekip M Dip & Ekip Com STA Modbus RS-485,ABB,Circuit Breakers,modbus
 d8d975c7-5f81-47e5-9f23-e21163ec690d,Tmax XT5,Tmax XT5 & Ekip Touch Measuring & Ekip Com Modbus RTU,ABB,Circuit Breakers,modbus
