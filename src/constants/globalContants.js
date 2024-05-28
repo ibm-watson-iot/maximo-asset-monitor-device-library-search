@@ -17,6 +17,8 @@ export const PROTOCOLS_TAG_COLOR = {
   bacnet: "magenta",
   MTConnect: "purple",
   "json-over-http": "cool-grey",
+  "allen-bradley": "cyan",
+  "opc-ua": "magenta",
 };
 
 export const MANUFACTURER = [
