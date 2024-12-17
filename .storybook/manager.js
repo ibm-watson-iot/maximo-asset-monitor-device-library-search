@@ -1,6 +1,13 @@
 import { addons } from "@storybook/manager-api";
 import theme from "./theme";
 
+addons.register('togglePanel', (api) => {
+  api.togglePanel(false);
+});
+addons.register('toggleFullscreen', (api) => {
+  api.toggleFullscreen(true);
+});
+
 addons.setConfig({
   isFullscreen: true,
   showNav: false,
@@ -22,6 +29,6 @@ addons.setConfig({
     zoom: { hidden: true },
     eject: { hidden: true },
     copy: { hidden: true },
-    // fullscreen: { hidden: true },
+    fullscreen: { hidden: true },
   },
 });

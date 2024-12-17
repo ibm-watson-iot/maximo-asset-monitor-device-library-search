@@ -10,6 +10,7 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    options: { showPanel: false }
   },
 };
 

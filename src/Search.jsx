@@ -95,7 +95,15 @@ export default function Search() {
         header: true,
         skipEmptyLines: true,
         complete: function (input) {
-          setDevicesData(input.data);
+          const uniqueData = {};
+
+          input.data.forEach((element) => {
+            uniqueData[
+              `${element.product_series}__${element.product_name}__${element.manufacturer}__${element.product_type}__${element.supported_protocols}`
+            ] = element;
+          });
+
+          setDevicesData(Object.values(uniqueData));
           setIsLoading(false);
         },
       });
@@ -195,11 +203,12 @@ export default function Search() {
               id="version"
               data-testid="version"
               type="inline"
-              titleText="Version: "
+              titleText="Version:"
               label=""
               onChange={({ selectedItem }) => {
                 setVersion(selectedItem);
               }}
+              itemToString={(item) => item}
               items={Object.keys(VERSIONS)}
               initialSelectedItem={version}
             />

@@ -7,11 +7,6 @@
  */
 import React from "react";
 
-const defaultProps = {
-  logo: undefined,
-  name: undefined,
-};
-
 const ManufacturerCell: React.FC<{
   logo?: string;
   name?: string;
@@ -30,5 +25,4 @@ const ManufacturerCell: React.FC<{
   </div>
 );
 
-ManufacturerCell.defaultProps = defaultProps;
 export default ManufacturerCell;

@@ -44,6 +44,6 @@ export default create({
   inputTextColor: text01,
   inputBorderRadius: 0,
 
-  brandTitle: "Edge data collector",
+  brandTitle: "Maximo Asset Monitor : Device library search",
   brandUrl: "",
 });
