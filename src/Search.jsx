@@ -1,5 +1,5 @@
-import { StatefulTable, Tag, Link, Dropdown } from "carbon-addons-iot-react";
-
+import { StatefulTable, Tag, Link } from "carbon-addons-iot-react";
+import { MenuItem, MenuButton } from "@carbon/react";
 import Papa from "papaparse";
 import { useMemo, useEffect, useState } from "react";
 
@@ -199,19 +199,18 @@ export default function Search() {
             persistent: true,
           },
           customToolbarContent: (
-            <Dropdown
-              id="version"
-              data-testid="version"
-              type="inline"
-              titleText="Version:"
-              label=""
-              onChange={({ selectedItem }) => {
-                setVersion(selectedItem);
-              }}
-              itemToString={(item) => item}
-              items={Object.keys(VERSIONS)}
-              initialSelectedItem={version}
-            />
+            <MenuButton label="Version" kind="ghost">
+              <MenuItem
+                label={Object.keys(VERSIONS)[0]}
+                key={Object.keys(VERSIONS)[0]}
+                onClick={() => setVersion(Object.keys(VERSIONS)[0])}
+              />
+              <MenuItem
+                label={Object.keys(VERSIONS)[1]}
+                key={Object.keys(VERSIONS)[1]}
+                onClick={() => setVersion(Object.keys(VERSIONS)[1])}
+              />
+            </MenuButton>
           ),
         },
       }}
